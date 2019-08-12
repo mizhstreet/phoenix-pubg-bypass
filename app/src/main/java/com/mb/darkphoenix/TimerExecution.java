@@ -10,7 +10,6 @@ public class TimerExecution {
     public TimerTask timerTask;
     public Handler handler = new Handler();
 
-    //To stop timer
     public void stopTimer(){
         if(timer != null){
             timer.cancel();
@@ -18,14 +17,12 @@ public class TimerExecution {
         }
     }
 
-    //To start timer
     public void startTimer(){
         timer = new Timer();
         timerTask = new TimerTask() {
             public void run() {
                 handler.post(new Runnable() {
                     public void run(){
-                        //your cod e is here
                         Command c = new Command();
                         c.execute();
                     }
